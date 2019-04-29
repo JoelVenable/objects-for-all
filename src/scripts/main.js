@@ -16,7 +16,7 @@ handleGetCategoryClick = () => {
 };
 
 handleGetCategoryDetailClick = () => {
-    API.getCategoryWithJunk()
+    API.getCategoriesWithJunk()
         .then(result => {
             console.log("category list", result);
             buildCategoryDetailDom(result);

@@ -1,0 +1,13 @@
+#container {
+    width: 60%;
+}
+
+#container div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#container ul {
+    width: 50%;
+}
