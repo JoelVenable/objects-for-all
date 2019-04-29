@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,19 @@
     <title>One Object For All and All For One</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
+
 <body>
 
     <h1>What I found in the Junk Drawer</h1>
-    <button id="btn-getJunk">Get Junk</button>
-    <button id="btn-getCategories">Get Categories</button>
-    <button id="btn-getCategoryDetails">Get Category Details</button>
+    <div id="buttons"></div>
     <div id="container"></div>
 
-    <h2>More Junk Categories</h2>
-    <fieldset>
-        <label for="junk__category">Name:</label>
-        <input id="junk__category" class="junk__category" type="text" autofocus />
-    </fieldset>
-
-    <button class="btn category__save" id="btn-saveCategory">Save Junk Category</button>
 
     <script src="scripts/dom-category.js"></script>
     <script src="scripts/dom-junk.js"></script>
+    <script src="scripts/buttons.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/dbcalls.js"></script>
 </body>
+
 </html>
