@@ -17,8 +17,8 @@ const API = {
     getCategoriesWithJunk: function () {
         return this._fetchLocal("category?_embed=junk");
     },
-    saveCategory: function (obj) {
-        return this._fetchLocal("category",{
+    save: function (endpoint, obj) {
+        return this._fetchLocal(endpoint,{
             method: "POST",
             headers: {
             "Content-Type": "application/json"

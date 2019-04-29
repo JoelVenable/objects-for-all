@@ -31,3 +31,4 @@ const buildCategoryDetailDom = (data) => {
       </div>`;
   });
 };
+

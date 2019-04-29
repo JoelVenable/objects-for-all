@@ -1,48 +1,22 @@
 
-handleGetJunkClick = () => {
-    API.getJunk()
-    .then(result => {
-        console.log("junk", result);
-        buildJunkDom(result);
-    });
-};
-
-handleGetCategoryClick = () => {
-    API.getCategories()
-        .then(result => {
-            console.log("category", result);
-            buildCategoryDom(result);
-        });
-};
-
-handleGetCategoryDetailClick = () => {
-    API.getCategoriesWithJunk()
-        .then(result => {
-            console.log("category list", result);
-            buildCategoryDetailDom(result);
-        });
-};
-
-document.querySelector("#btn-saveCategory").addEventListener("click", event => {
-    const category = document.querySelector(".junk__category").value;
-
-        // Once you have collected all the values, build your data structure
-        const categoryObj = {
-            name: category
-        };
-
-    API.saveCategory(categoryObj)
-    .then(parsedResult => {
-        console.log("what is the result", parsedResult);
-    });
-
-});
 
 
-document.querySelector("#btn-getJunk").addEventListener("click", handleGetJunkClick);
-document.querySelector("#btn-getCategories").addEventListener("click", handleGetCategoryClick);
-document.querySelector("#btn-getCategoryDetails").addEventListener("click", handleGetCategoryDetailClick);
 
+
+for (const key in buttons) {
+  let btnContainer = document.querySelector("#buttons");
+  if (buttons.hasOwnProperty(key)) {
+    const button = buttons[key];
+    // add button to dom
+    let btn = document.createElement("button");
+    btn.textContent = button.name;
+    btn.id = button.btnId;
+    btnContainer.appendChild(btn);
+
+    // add event listeners
+    btn.addEventListener("click", button.function);
+  }
+}
 const mainContainer = document.querySelector("#container");
 
 
