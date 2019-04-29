@@ -10,4 +10,4 @@ module.exports = {
             debounceDelay: 1000
         }
     }
-}
+};

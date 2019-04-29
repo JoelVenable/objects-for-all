@@ -1,31 +1,30 @@
 console.log("What's in the junk drawer?");
 
 const API = {
-    getCategories: function () {
-        return fetch("http://localhost:8088/category")
+    _fetchLocal: function(endpoint, optionsObj) {
+        return fetch(`http://localhost:8088/${endpoint}`, optionsObj)
             .then(response => response.json());
+    },
+    getCategories: function () {
+        return this._fetchLocal("category");
     },
     getJunk: function () {
-        return fetch("http://localhost:8088/junk")
-            .then(response => response.json());
+        return this._fetchLocal("junk");
     },
     getJunkWithCategory: function () {
-        return fetch("http://localhost:8088/category/1?_embed=junk")
-            .then(response => response.json());
+        return this._fetchLocal("junk/1?_embed=category");
     },
-    getCategoryWithJunk: function () {
-        return fetch("http://localhost:8088/category/1?_embed=junk")
-        .then(response => response.json());
+    getCategoriesWithJunk: function () {
+        return this._fetchLocal("category?_embed=junk");
     },
     saveCategory: function (obj) {
-        return fetch("http://localhost:8088/category",{
+        return this._fetchLocal("category",{
             method: "POST",
             headers: {
             "Content-Type": "application/json"
             },
             body: JSON.stringify(obj)
-        })
-        .then(response => response.json())
+        });
     }
 };
 

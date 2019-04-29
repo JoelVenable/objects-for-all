@@ -1,7 +1,7 @@
 const junkDom = (obj) => {
     return `<div>
-                ${obj.name}
-                ${obj.categoryId}
+                <span>${obj.name}</span>
+                <span>${obj.categoryId}</span>
             </div>`;
 };
 
