@@ -55,7 +55,7 @@ buttons = [{
           .then(parsedResult => {
             console.log("what is the result", parsedResult);
           });
-      })
+      });
     }
   },
   {
@@ -63,7 +63,7 @@ buttons = [{
     btnId: "#btn-addJunk",
     function: buildDOMJunkAdder
   }
-]
+];
 
 
 
