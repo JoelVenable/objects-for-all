@@ -64,7 +64,7 @@ function saveJunk() {
     let newJunk = {
         name: document.getElementById("junk__name").value,
         categoryId: document.getElementById("junk__category").value
-    }
+    };
     const newCategory = document.getElementById("add-category").checked; // Boolean
     const newCategoryInput = {
         name: document.getElementById("new__category-input").value
@@ -84,7 +84,7 @@ function saveJunk() {
             .then(savedCategory => {
                 newJunk.categoryId = savedCategory.id;
                 saveJunk(newJunk);
-            })
+            });
     } else {
         saveJunk(newJunk);
     }
